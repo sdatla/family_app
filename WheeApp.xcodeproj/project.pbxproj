@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */; };
+		8C0C4A121FAF8960005F5C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A111FAF8960005F5C32 /* ViewController.swift */; };
+		8C0C4A151FAF8960005F5C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A131FAF8960005F5C32 /* Main.storyboard */; };
+		8C0C4A181FAF8960005F5C32 /* WheeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */; };
+		8C0C4A1A1FAF8960005F5C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A191FAF8960005F5C32 /* Assets.xcassets */; };
+		8C0C4A1D1FAF8960005F5C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */; };
+		8C0C4A281FAF8960005F5C32 /* WheeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A271FAF8960005F5C32 /* WheeAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C0C4A241FAF8960005F5C32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C0C4A041FAF8960005F5C32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C0C4A0B1FAF8960005F5C32;
+			remoteInfo = WheeApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8C0C4A0C1FAF8960005F5C32 /* WheeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C0C4A111FAF8960005F5C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C0C4A141FAF8960005F5C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WheeApp.xcdatamodel; sourceTree = "<group>"; };
+		8C0C4A191FAF8960005F5C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C0C4A1C1FAF8960005F5C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C0C4A1E1FAF8960005F5C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C0C4A231FAF8960005F5C32 /* WheeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0C4A271FAF8960005F5C32 /* WheeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheeAppTests.swift; sourceTree = "<group>"; };
+		8C0C4A291FAF8960005F5C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C0C4A091FAF8960005F5C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0C4A201FAF8960005F5C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C0C4A031FAF8960005F5C32 = {
+			isa = PBXGroup;
+			children = (
+				8C0C4A0E1FAF8960005F5C32 /* WheeApp */,
+				8C0C4A261FAF8960005F5C32 /* WheeAppTests */,
+				8C0C4A0D1FAF8960005F5C32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C0C4A0D1FAF8960005F5C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C4A0C1FAF8960005F5C32 /* WheeApp.app */,
+				8C0C4A231FAF8960005F5C32 /* WheeAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C0C4A0E1FAF8960005F5C32 /* WheeApp */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */,
+				8C0C4A111FAF8960005F5C32 /* ViewController.swift */,
+				8C0C4A131FAF8960005F5C32 /* Main.storyboard */,
+				8C0C4A191FAF8960005F5C32 /* Assets.xcassets */,
+				8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */,
+				8C0C4A1E1FAF8960005F5C32 /* Info.plist */,
+				8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */,
+			);
+			path = WheeApp;
+			sourceTree = "<group>";
+		};
+		8C0C4A261FAF8960005F5C32 /* WheeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C4A271FAF8960005F5C32 /* WheeAppTests.swift */,
+				8C0C4A291FAF8960005F5C32 /* Info.plist */,
+			);
+			path = WheeAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C0C4A0B1FAF8960005F5C32 /* WheeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0C4A2C1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeApp" */;
+			buildPhases = (
+				8C0C4A081FAF8960005F5C32 /* Sources */,
+				8C0C4A091FAF8960005F5C32 /* Frameworks */,
+				8C0C4A0A1FAF8960005F5C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WheeApp;
+			productName = WheeApp;
+			productReference = 8C0C4A0C1FAF8960005F5C32 /* WheeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C0C4A221FAF8960005F5C32 /* WheeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0C4A2F1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeAppTests" */;
+			buildPhases = (
+				8C0C4A1F1FAF8960005F5C32 /* Sources */,
+				8C0C4A201FAF8960005F5C32 /* Frameworks */,
+				8C0C4A211FAF8960005F5C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C0C4A251FAF8960005F5C32 /* PBXTargetDependency */,
+			);
+			name = WheeAppTests;
+			productName = WheeAppTests;
+			productReference = 8C0C4A231FAF8960005F5C32 /* WheeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C0C4A041FAF8960005F5C32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Leung Wai Chan";
+				TargetAttributes = {
+					8C0C4A0B1FAF8960005F5C32 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					8C0C4A221FAF8960005F5C32 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 8C0C4A0B1FAF8960005F5C32;
+					};
+				};
+			};
+			buildConfigurationList = 8C0C4A071FAF8960005F5C32 /* Build configuration list for PBXProject "WheeApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C0C4A031FAF8960005F5C32;
+			productRefGroup = 8C0C4A0D1FAF8960005F5C32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C0C4A0B1FAF8960005F5C32 /* WheeApp */,
+				8C0C4A221FAF8960005F5C32 /* WheeAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C0C4A0A1FAF8960005F5C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0C4A1D1FAF8960005F5C32 /* LaunchScreen.storyboard in Resources */,
+				8C0C4A1A1FAF8960005F5C32 /* Assets.xcassets in Resources */,
+				8C0C4A151FAF8960005F5C32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0C4A211FAF8960005F5C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C0C4A081FAF8960005F5C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0C4A181FAF8960005F5C32 /* WheeApp.xcdatamodeld in Sources */,
+				8C0C4A121FAF8960005F5C32 /* ViewController.swift in Sources */,
+				8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0C4A1F1FAF8960005F5C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0C4A281FAF8960005F5C32 /* WheeAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C0C4A251FAF8960005F5C32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C0C4A0B1FAF8960005F5C32 /* WheeApp */;
+			targetProxy = 8C0C4A241FAF8960005F5C32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8C0C4A131FAF8960005F5C32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0C4A141FAF8960005F5C32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0C4A1C1FAF8960005F5C32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C0C4A2A1FAF8960005F5C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C0C4A2B1FAF8960005F5C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C0C4A2D1FAF8960005F5C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				INFOPLIST_FILE = WheeApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C0C4A2E1FAF8960005F5C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				INFOPLIST_FILE = WheeApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8C0C4A301FAF8960005F5C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				INFOPLIST_FILE = WheeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheeApp.app/WheeApp";
+			};
+			name = Debug;
+		};
+		8C0C4A311FAF8960005F5C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				INFOPLIST_FILE = WheeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheeApp.app/WheeApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C0C4A071FAF8960005F5C32 /* Build configuration list for PBXProject "WheeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0C4A2A1FAF8960005F5C32 /* Debug */,
+				8C0C4A2B1FAF8960005F5C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C0C4A2C1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0C4A2D1FAF8960005F5C32 /* Debug */,
+				8C0C4A2E1FAF8960005F5C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C0C4A2F1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0C4A301FAF8960005F5C32 /* Debug */,
+				8C0C4A311FAF8960005F5C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */,
+			);
+			currentVersion = 8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */;
+			path = WheeApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8C0C4A041FAF8960005F5C32 /* Project object */;
+}
