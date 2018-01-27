@@ -1,0 +1,6 @@
+framework module Pods_WheeApp {
+  umbrella header "Pods-WheeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

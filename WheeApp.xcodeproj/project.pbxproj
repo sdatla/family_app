@@ -7,13 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50713DFA20D41C2D240B7556 /* Pods_WheeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */; };
 		8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */; };
-		8C0C4A121FAF8960005F5C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A111FAF8960005F5C32 /* ViewController.swift */; };
+		8C0C4A121FAF8960005F5C32 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A111FAF8960005F5C32 /* SignInViewController.swift */; };
 		8C0C4A151FAF8960005F5C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A131FAF8960005F5C32 /* Main.storyboard */; };
-		8C0C4A181FAF8960005F5C32 /* WheeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */; };
 		8C0C4A1A1FAF8960005F5C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A191FAF8960005F5C32 /* Assets.xcassets */; };
 		8C0C4A1D1FAF8960005F5C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */; };
 		8C0C4A281FAF8960005F5C32 /* WheeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A271FAF8960005F5C32 /* WheeAppTests.swift */; };
+		8C0C4A401FAF935C005F5C32 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C4A3F1FAF935C005F5C32 /* SafariServices.framework */; };
+		8C0C4A421FAF9362005F5C32 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C4A411FAF9362005F5C32 /* SystemConfiguration.framework */; };
+		8C1403C41FC2C2440068483D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1403C31FC2C2440068483D /* MessageUI.framework */; };
+		8C2917D520267B9400E62BE5 /* credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D420267B9400E62BE5 /* credential.swift */; };
+		8C2917D720268CDE00E62BE5 /* family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D620268CDE00E62BE5 /* family.swift */; };
+		8C2917DA20268F9B00E62BE5 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D920268F9B00E62BE5 /* constants.swift */; };
+		8C5D345E20549F6C007DAC9F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */; };
+		8C5D3461205A27A3007DAC9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */; };
+		8C5DD96F935571E083F177F0 /* Pods_WheeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */; };
+		8C75028F20792B64006F6EF4 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75028E20792B63006F6EF4 /* models.swift */; };
+		8C8F07A9200C056A007884F0 /* AvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8F07A8200C056A007884F0 /* AvatarCollectionCell.swift */; };
+		8C8F07AC200C495E007884F0 /* SignUpImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F07AB200C495E007884F0 /* SignUpImageView.xib */; };
+		8C8F07AE200C4F51007884F0 /* SignUpImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8F07AD200C4F51007884F0 /* SignUpImageView.swift */; };
+		8C9A336D203E65C800726462 /* customUITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A336C203E65C800726462 /* customUITabBarViewController.swift */; };
+		8C9A336F20431EA400726462 /* InputIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A336E20431EA400726462 /* InputIconView.swift */; };
+		8C9A337120438E5800726462 /* DropdownSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A337020438E5800726462 /* DropdownSelection.swift */; };
+		8CA372BC200A85D2006DEAC1 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA372BB200A85D2006DEAC1 /* AvatarView.swift */; };
+		8CA372BE200A86A8006DEAC1 /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA372BD200A86A8006DEAC1 /* AvatarView.xib */; };
+		8CB559FA202663F300741726 /* NewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB559F8202663F300741726 /* NewFeedViewController.swift */; };
+		8CB559FB202663F300741726 /* NewFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB559F9202663F300741726 /* NewFeedViewController.xib */; };
+		8CBDB8F12066BD3F00559E12 /* ProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDB8F02066BD3E00559E12 /* ProfileHelper.swift */; };
+		8CD918C81FBD65E6003C5D9E /* text_field_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD918C71FBD65E6003C5D9E /* text_field_extensions.swift */; };
+		8CD918CA1FBD6B62003C5D9E /* profileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD918C91FBD6B62003C5D9E /* profileInput.swift */; };
+		8CED0B801FB2CBF600A65375 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */; };
+		8CEF36021FAFA154000F2B79 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CEF36011FAFA148000F2B79 /* GoogleSignIn.bundle */; };
+		8CFF26731FC081420071FA84 /* SignUpFamilyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF26721FC081420071FA84 /* SignUpFamilyProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +53,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		550A4FE78C75D3BFCF98790B /* Pods-WheeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0C4A0C1FAF8960005F5C32 /* WheeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C0C4A111FAF8960005F5C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C0C4A111FAF8960005F5C32 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8C0C4A141FAF8960005F5C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WheeApp.xcdatamodel; sourceTree = "<group>"; };
 		8C0C4A191FAF8960005F5C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C0C4A1C1FAF8960005F5C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C0C4A1E1FAF8960005F5C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0C4A231FAF8960005F5C32 /* WheeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0C4A271FAF8960005F5C32 /* WheeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheeAppTests.swift; sourceTree = "<group>"; };
 		8C0C4A291FAF8960005F5C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C0C4A341FAF8FBC005F5C32 /* WheeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WheeApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C0C4A3F1FAF935C005F5C32 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		8C0C4A411FAF9362005F5C32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8C1403C31FC2C2440068483D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8C2917D420267B9400E62BE5 /* credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = credential.swift; sourceTree = "<group>"; };
+		8C2917D620268CDE00E62BE5 /* family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = family.swift; sourceTree = "<group>"; };
+		8C2917D920268F9B00E62BE5 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C75028E20792B63006F6EF4 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		8C8F07A8200C056A007884F0 /* AvatarCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionCell.swift; sourceTree = "<group>"; };
+		8C8F07AB200C495E007884F0 /* SignUpImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpImageView.xib; sourceTree = "<group>"; };
+		8C8F07AD200C4F51007884F0 /* SignUpImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpImageView.swift; sourceTree = "<group>"; };
+		8C9A336C203E65C800726462 /* customUITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITabBarViewController.swift; sourceTree = "<group>"; };
+		8C9A336E20431EA400726462 /* InputIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIconView.swift; sourceTree = "<group>"; };
+		8C9A337020438E5800726462 /* DropdownSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelection.swift; sourceTree = "<group>"; };
+		8CA372BB200A85D2006DEAC1 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		8CA372BD200A86A8006DEAC1 /* AvatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
+		8CB559F8202663F300741726 /* NewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedViewController.swift; sourceTree = "<group>"; };
+		8CB559F9202663F300741726 /* NewFeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFeedViewController.xib; sourceTree = "<group>"; };
+		8CBDB8F02066BD3E00559E12 /* ProfileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHelper.swift; sourceTree = "<group>"; };
+		8CD918C71FBD65E6003C5D9E /* text_field_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = text_field_extensions.swift; sourceTree = "<group>"; };
+		8CD918C91FBD6B62003C5D9E /* profileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileInput.swift; sourceTree = "<group>"; };
+		8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
+		8CEF36011FAFA148000F2B79 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = SDKs/GoogleSignIn/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		8CFF26721FC081420071FA84 /* SignUpFamilyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFamilyProfileViewController.swift; sourceTree = "<group>"; };
+		8E2992551F2F77AFCBDBC6ED /* Pods-WheeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B46DA909470460B85687CCD7 /* Pods-WheeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC8C20E37DA0129306367555 /* Pods-WheeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +102,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1403C41FC2C2440068483D /* MessageUI.framework in Frameworks */,
+				8C0C4A421FAF9362005F5C32 /* SystemConfiguration.framework in Frameworks */,
+				8C0C4A401FAF935C005F5C32 /* SafariServices.framework in Frameworks */,
+				8C5DD96F935571E083F177F0 /* Pods_WheeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +113,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50713DFA20D41C2D240B7556 /* Pods_WheeAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		402444AEA9198C5B42B371F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C1403C31FC2C2440068483D /* MessageUI.framework */,
+				8C0C4A411FAF9362005F5C32 /* SystemConfiguration.framework */,
+				8C0C4A3F1FAF935C005F5C32 /* SafariServices.framework */,
+				5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */,
+				2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57B28CA157798B56837E449B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E2992551F2F77AFCBDBC6ED /* Pods-WheeApp.debug.xcconfig */,
+				CC8C20E37DA0129306367555 /* Pods-WheeApp.release.xcconfig */,
+				B46DA909470460B85687CCD7 /* Pods-WheeAppTests.debug.xcconfig */,
+				550A4FE78C75D3BFCF98790B /* Pods-WheeAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C09CCE72005D6E900FC1671 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				8C09CCE82005D6FD00FC1671 /* account__setup */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		8C09CCE82005D6FD00FC1671 /* account__setup */ = {
+			isa = PBXGroup;
+			children = (
+				8CA372BB200A85D2006DEAC1 /* AvatarView.swift */,
+				8C8F07A8200C056A007884F0 /* AvatarCollectionCell.swift */,
+				8C8F07AD200C4F51007884F0 /* SignUpImageView.swift */,
+				8C9A336E20431EA400726462 /* InputIconView.swift */,
+				8C9A337020438E5800726462 /* DropdownSelection.swift */,
+			);
+			path = account__setup;
+			sourceTree = "<group>";
+		};
 		8C0C4A031FAF8960005F5C32 = {
 			isa = PBXGroup;
 			children = (
+				8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */,
+				8C9A336C203E65C800726462 /* customUITabBarViewController.swift */,
+				8CEF36011FAFA148000F2B79 /* GoogleSignIn.bundle */,
 				8C0C4A0E1FAF8960005F5C32 /* WheeApp */,
 				8C0C4A261FAF8960005F5C32 /* WheeAppTests */,
 				8C0C4A0D1FAF8960005F5C32 /* Products */,
+				57B28CA157798B56837E449B /* Pods */,
+				402444AEA9198C5B42B371F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +189,27 @@
 		8C0C4A0E1FAF8960005F5C32 /* WheeApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CBDB8EF20662D8400559E12 /* utilities */,
+				8C2917D820268F8900E62BE5 /* constants */,
+				8C8F07AF20132B4E007884F0 /* components */,
+				8C8F07AA200C4922007884F0 /* xibs */,
+				8CD918C61FBD65C8003C5D9E /* extensions */,
+				8CD918C31FBD6392003C5D9E /* ui_views */,
+				8C0D3F201FB8E8BF002F293E /* models */,
 				8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */,
-				8C0C4A111FAF8960005F5C32 /* ViewController.swift */,
+				8C0C4A111FAF8960005F5C32 /* SignInViewController.swift */,
+				8C8F07AB200C495E007884F0 /* SignUpImageView.xib */,
+				8CA372BD200A86A8006DEAC1 /* AvatarView.xib */,
 				8C0C4A131FAF8960005F5C32 /* Main.storyboard */,
+				8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */,
 				8C0C4A191FAF8960005F5C32 /* Assets.xcassets */,
 				8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */,
 				8C0C4A1E1FAF8960005F5C32 /* Info.plist */,
-				8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */,
+				8C0C4A341FAF8FBC005F5C32 /* WheeApp-Bridging-Header.h */,
+				8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */,
+				8CFF26721FC081420071FA84 /* SignUpFamilyProfileViewController.swift */,
+				8CB559F8202663F300741726 /* NewFeedViewController.swift */,
+				8CB559F9202663F300741726 /* NewFeedViewController.xib */,
 			);
 			path = WheeApp;
 			sourceTree = "<group>";
@@ -99,6 +223,63 @@
 			path = WheeAppTests;
 			sourceTree = "<group>";
 		};
+		8C0D3F201FB8E8BF002F293E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8C75028E20792B63006F6EF4 /* models.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		8C2917D820268F8900E62BE5 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				8C2917D920268F9B00E62BE5 /* constants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		8C8F07AA200C4922007884F0 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		8C8F07AF20132B4E007884F0 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		8CBDB8EF20662D8400559E12 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8CBDB8F02066BD3E00559E12 /* ProfileHelper.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		8CD918C31FBD6392003C5D9E /* ui_views */ = {
+			isa = PBXGroup;
+			children = (
+				8C09CCE72005D6E900FC1671 /* components */,
+				8CD918C91FBD6B62003C5D9E /* profileInput.swift */,
+			);
+			path = ui_views;
+			sourceTree = "<group>";
+		};
+		8CD918C61FBD65C8003C5D9E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CD918C71FBD65E6003C5D9E /* text_field_extensions.swift */,
+				8C2917D420267B9400E62BE5 /* credential.swift */,
+				8C2917D620268CDE00E62BE5 /* family.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C0C4A2C1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeApp" */;
 			buildPhases = (
+				319E20B52485BE402B12BE64 /* [CP] Check Pods Manifest.lock */,
 				8C0C4A081FAF8960005F5C32 /* Sources */,
 				8C0C4A091FAF8960005F5C32 /* Frameworks */,
 				8C0C4A0A1FAF8960005F5C32 /* Resources */,
+				CBA7F8FE88D40D413A7E99DC /* [CP] Embed Pods Frameworks */,
+				798C29F9EEC4B7E854501E9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C0C4A2F1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeAppTests" */;
 			buildPhases = (
+				49F5C47B6B39CA64C2C2DA20 /* [CP] Check Pods Manifest.lock */,
 				8C0C4A1F1FAF8960005F5C32 /* Sources */,
 				8C0C4A201FAF8960005F5C32 /* Frameworks */,
 				8C0C4A211FAF8960005F5C32 /* Resources */,
+				510BBB284D458CE2BC345C1C /* [CP] Embed Pods Frameworks */,
+				BE120FE0596F4BC8B6927F0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +336,7 @@
 				TargetAttributes = {
 					8C0C4A0B1FAF8960005F5C32 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 					8C0C4A221FAF8960005F5C32 = {
 						CreatedOnToolsVersion = 9.0;
@@ -180,9 +368,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF36021FAFA154000F2B79 /* GoogleSignIn.bundle in Resources */,
+				8C5D3461205A27A3007DAC9F /* GoogleService-Info.plist in Resources */,
 				8C0C4A1D1FAF8960005F5C32 /* LaunchScreen.storyboard in Resources */,
+				8C8F07AC200C495E007884F0 /* SignUpImageView.xib in Resources */,
 				8C0C4A1A1FAF8960005F5C32 /* Assets.xcassets in Resources */,
+				8CA372BE200A86A8006DEAC1 /* AvatarView.xib in Resources */,
 				8C0C4A151FAF8960005F5C32 /* Main.storyboard in Resources */,
+				8CB559FB202663F300741726 /* NewFeedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,13 +388,164 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		319E20B52485BE402B12BE64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49F5C47B6B39CA64C2C2DA20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheeAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		510BBB284D458CE2BC345C1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		798C29F9EEC4B7E854501E9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-resources.sh",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE120FE0596F4BC8B6927F0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA7F8FE88D40D413A7E99DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8C0C4A081FAF8960005F5C32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0C4A181FAF8960005F5C32 /* WheeApp.xcdatamodeld in Sources */,
-				8C0C4A121FAF8960005F5C32 /* ViewController.swift in Sources */,
+				8C9A336D203E65C800726462 /* customUITabBarViewController.swift in Sources */,
+				8CFF26731FC081420071FA84 /* SignUpFamilyProfileViewController.swift in Sources */,
+				8C9A336F20431EA400726462 /* InputIconView.swift in Sources */,
+				8C0C4A121FAF8960005F5C32 /* SignInViewController.swift in Sources */,
+				8C2917D520267B9400E62BE5 /* credential.swift in Sources */,
+				8C2917DA20268F9B00E62BE5 /* constants.swift in Sources */,
+				8C9A337120438E5800726462 /* DropdownSelection.swift in Sources */,
+				8CD918C81FBD65E6003C5D9E /* text_field_extensions.swift in Sources */,
+				8CD918CA1FBD6B62003C5D9E /* profileInput.swift in Sources */,
+				8C2917D720268CDE00E62BE5 /* family.swift in Sources */,
+				8CED0B801FB2CBF600A65375 /* SignUpProfileViewController.swift in Sources */,
+				8C8F07AE200C4F51007884F0 /* SignUpImageView.swift in Sources */,
+				8C5D345E20549F6C007DAC9F /* ScannerViewController.swift in Sources */,
+				8C75028F20792B64006F6EF4 /* models.swift in Sources */,
+				8C8F07A9200C056A007884F0 /* AvatarCollectionCell.swift in Sources */,
+				8CB559FA202663F300741726 /* NewFeedViewController.swift in Sources */,
+				8CBDB8F12066BD3F00559E12 /* ProfileHelper.swift in Sources */,
+				8CA372BC200A85D2006DEAC1 /* AvatarView.swift in Sources */,
 				8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +608,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -319,6 +665,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -349,34 +697,60 @@
 		};
 		8C0C4A2D1FAF8960005F5C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E2992551F2F77AFCBDBC6ED /* Pods-WheeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKs/GoogleSignIn",
+				);
 				INFOPLIST_FILE = WheeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WheeApp/WheeApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8C0C4A2E1FAF8960005F5C32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC8C20E37DA0129306367555 /* Pods-WheeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKs/GoogleSignIn",
+				);
 				INFOPLIST_FILE = WheeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = leung.WheeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WheeApp/WheeApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		8C0C4A301FAF8960005F5C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B46DA909470460B85687CCD7 /* Pods-WheeAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -393,6 +767,7 @@
 		};
 		8C0C4A311FAF8960005F5C32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 550A4FE78C75D3BFCF98790B /* Pods-WheeAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -426,6 +801,7 @@
 				8C0C4A2E1FAF8960005F5C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C0C4A2F1FAF8960005F5C32 /* Build configuration list for PBXNativeTarget "WheeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -434,21 +810,9 @@
 				8C0C4A311FAF8960005F5C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8C0C4A161FAF8960005F5C32 /* WheeApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */,
-			);
-			currentVersion = 8C0C4A171FAF8960005F5C32 /* WheeApp.xcdatamodel */;
-			path = WheeApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8C0C4A041FAF8960005F5C32 /* Project object */;
 }
