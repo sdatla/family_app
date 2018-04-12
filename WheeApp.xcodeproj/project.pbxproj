@@ -20,6 +20,8 @@
 		8C2917D520267B9400E62BE5 /* credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D420267B9400E62BE5 /* credential.swift */; };
 		8C2917D720268CDE00E62BE5 /* family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D620268CDE00E62BE5 /* family.swift */; };
 		8C2917DA20268F9B00E62BE5 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2917D920268F9B00E62BE5 /* constants.swift */; };
+		8C29B7EB207F21E000AD537B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C29B7EA207F21E000AD537B /* Profile.swift */; };
+		8C29B7ED207F21FC00AD537B /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C29B7EC207F21FC00AD537B /* Family.swift */; };
 		8C5D345E20549F6C007DAC9F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */; };
 		8C5D3461205A27A3007DAC9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */; };
 		8C5DD96F935571E083F177F0 /* Pods_WheeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */; };
@@ -73,6 +75,8 @@
 		8C2917D420267B9400E62BE5 /* credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = credential.swift; sourceTree = "<group>"; };
 		8C2917D620268CDE00E62BE5 /* family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = family.swift; sourceTree = "<group>"; };
 		8C2917D920268F9B00E62BE5 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		8C29B7EA207F21E000AD537B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		8C29B7EC207F21FC00AD537B /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C75028E20792B63006F6EF4 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				8C75028E20792B63006F6EF4 /* models.swift */,
+				8C29B7EA207F21E000AD537B /* Profile.swift */,
+				8C29B7EC207F21FC00AD537B /* Family.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9A336D203E65C800726462 /* customUITabBarViewController.swift in Sources */,
+				8C29B7EB207F21E000AD537B /* Profile.swift in Sources */,
 				8CFF26731FC081420071FA84 /* SignUpFamilyProfileViewController.swift in Sources */,
 				8C9A336F20431EA400726462 /* InputIconView.swift in Sources */,
 				8C0C4A121FAF8960005F5C32 /* SignInViewController.swift in Sources */,
@@ -538,6 +545,7 @@
 				8CD918C81FBD65E6003C5D9E /* text_field_extensions.swift in Sources */,
 				8CD918CA1FBD6B62003C5D9E /* profileInput.swift in Sources */,
 				8C2917D720268CDE00E62BE5 /* family.swift in Sources */,
+				8C29B7ED207F21FC00AD537B /* Family.swift in Sources */,
 				8CED0B801FB2CBF600A65375 /* SignUpProfileViewController.swift in Sources */,
 				8C8F07AE200C4F51007884F0 /* SignUpImageView.swift in Sources */,
 				8C5D345E20549F6C007DAC9F /* ScannerViewController.swift in Sources */,

@@ -5,181 +5,9 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-class Profile {
-    var avatar: Data?
-    var avatarUrl: String?
-    var name: String?
-    var email: String?
-    var phone: String?
-    var role: String?
-    var familyId: String?
-    var guid: String?
-    var profileStatus: String?
-    var isAnonymous: Bool?
-    init() {
-        
-    }
-    
-    init(_ user: User) {
-        name = user.displayName
-        email = user.email
-        isAnonymous = user.isAnonymous
-        guid = user.uid
-        phone = user.phoneNumber
-        profileStatus = ProfileStatus.PENDING.rawValue
-    }
-    
-    static func getCurrenetUser(completion: @escaping ((_ result: Profile) ->Void)) {
-        if Profile.isCurrentUserLoggedIn() {
-            Profile.getProfile(id: Auth.auth().currentUser!.uid, complete: completion)
-        }
-    }
-    
-    static func isCurrentUserLoggedIn() -> Bool {
-        return Auth.auth().currentUser != nil
-    }
-    
-    func createProfileInDatabase() {
-        guard let guid = self.guid else {return}
-        let profile = Firestore.firestore().collection("profiles").document(guid)
-        
-        let data = [
-            "name": self.name ?? "",
-            "email": self.email ?? "",
-            "phone": self.phone ?? "",
-            "account_type": self.phone ?? "",
-            "family_id": self.familyId ?? "",
-            "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
-        ]
-        profile.setData(data) {err in
-            if let err = err {
-                print("error updating the document \(err)")
-            } else {
-                print("document updated")
-            }
-        }
-    }
-    
-    func updateProfile(_ callback: (() -> Void)?) {
-        guard let guid = self.guid else {return}
-        let profile = Firestore.firestore().collection("profiles").document(guid)
-        if let avatar = self.avatar {
-            let storageRef = Storage.storage().reference()
-            let profileImageRef = storageRef.child("images/\(guid)_profile_image")
-            profileImageRef.putData(avatar, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    print("something wrong with profile image upload\(error!)")
-                    return
-                }
-                if let url = metadata.downloadURL()?.absoluteString {
-                    profile.updateData(["profile_image_url": url])
-                }
-            }
-        }
-        
-        let data = [
-            "name": self.name ?? "",
-            "email": self.email ?? "",
-            "phone": self.phone ?? "",
-            "account_type": self.phone ?? "",
-            "family_id": self.familyId ?? "",
-            "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
-        ]
-        
-        profile.updateData(data) {err in
-            if let err = err {
-                print("error updating the document \(err)")
-            } else {
-                print("document updated")
-                guard let cb = callback else {return}
-                cb()
-            }
-        }
-    }
-    
-    static func getProfile(id: String, complete: @escaping (_ profile: Profile) -> Void) {
-        let db =  Firestore.firestore()
-        db.collection("profiles").document(id).getDocument(completion: {(document, err) in
-            if err != nil {
-                print(err ?? "error")
-                return
-            }
-            guard let document = document else {return}
-            
-            if document.exists {
-                let data = document.data()
-                let profile = Profile()
-                profile.name = data["name"] as? String ?? ""
-                profile.email = data["email"] as? String ?? ""
-                profile.phone = data["phone"] as? String ?? ""
-                profile.role = data["account_type"] as? String ?? ""
-                profile.familyId = data["family_id"] as? String ?? ""
-                profile.guid = id
-                complete(profile)
-            }
-        })
-    }
-}
 
-class Family {
-    var members: [Profile]
-    var name: String
-    var id: String
-    var profilePic: Data?
-    var profileUrl: String?
-    init(_ members: [Profile]?, _ name: String?, _ id: String?) {
-        self.members = members ?? []
-        self.name = name ?? ""
-        self.id = id ?? UUID().uuidString
-    }
-    static func getFamily(familyId : String, complete: @escaping ((_ family: Family) -> Void)) {
-        let family = Firestore.firestore().collection("families").document(familyId)
-        family.getDocument { (document, err) in
-            if let document = document {
-                if !document.exists {return}
-                let name = document.data()["name"] as! String
-                var members = [Profile]()
-                let profiles = Firestore.firestore().collection("profiles").whereField("family_id", isEqualTo: familyId)
-                profiles.getDocuments(completion: { (snapshots, err) in
-                    guard let snapshots = snapshots else {return}
-                    if !snapshots.isEmpty {
-                        snapshots.documents.forEach({ (document) in
-                            if document.exists {
-                                let data = document.data()
-                                let profile = Profile()
-                                profile.name = data["name"] as? String ?? ""
-                                profile.email = data["email"] as? String ?? ""
-                                profile.phone = data["phone"] as? String ?? ""
-                                profile.role = data["account_type"] as? String ?? ""
-                                profile.familyId = data["family_id"] as? String ?? ""
-                                members.append(profile)
-                            }
-                        })
-                    } else {
-                        
-                    }
-                    let family = Family(members, name, familyId)
-                    print(family.members.count)
-                    complete(family)
-                })
-            }
-        }
-    }
-    func update() {
-        let family = Firestore.firestore().collection("families").document(self.id)
-        
-        family.updateData([
-            "name": self.name,
-            "members": self.members,
-        ]) {err in
-            if let err = err {
-                print("error updating the document \(err)")
-            } else {
-                print("document updated")
-            }
-        }
-    }
-}
+
+
 class SignUpProfileViewController: UIViewController,
     MFMessageComposeViewControllerDelegate,
     UIPickerViewDelegate,
@@ -234,6 +62,13 @@ class SignUpProfileViewController: UIViewController,
         didSet {
             if profile?.avatar != nil {
                 profileTopSection.selectedImage.image = UIImage(data: profile!.avatar!)
+                if let img = UIImage(data: profile!.avatar!) {
+                   profileTopSection.setImage(img)
+                }
+            } else if let profileImageUrl = profile?.avatarUrl {
+                profileTopSection.selectedImage.loadImageUsingCacheWithUrlString(profileImageUrl) { [weak self] profileImage in
+                    self?.profileTopSection.setImage(profileImage)
+                }
             }
             name.text = profile?.name ?? ""
             phone.input.text = profile?.phone ?? ""
@@ -406,8 +241,8 @@ class SignUpProfileViewController: UIViewController,
         let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, keyboardHeight + 20, 0)
         self.sv.contentInset = contentInsets
         self.sv.scrollIndicatorInsets = contentInsets
-        var aRect = self.view.frame
         if let activeFieldPresent = activeField {
+            let aRect = self.view.frame
             if (!aRect.contains(activeFieldPresent.frame.origin)) {
                 self.sv.scrollRectToVisible(aRect, animated: true)
             }

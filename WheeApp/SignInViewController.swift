@@ -97,6 +97,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
                     user.guid = uid
                     user.name = data["name"] as? String
                     user.profileStatus = (data["profile_status"] as! String)
+                    user.avatarUrl = data["profile_image_url"] as? String ?? ""
                     self.user = user
                     if user.profileStatus == ProfileStatus.DONE.rawValue {
                         self.performSegue(withIdentifier: "to_home_page", sender: nil)

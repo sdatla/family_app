@@ -23,6 +23,7 @@ class SignUpImageView: UIView {
             
             selectedImage.isUserInteractionEnabled = true
             selectedImage.addGestureRecognizer(tapGestureRecognizer)
+            
         }
     }
     @IBAction func onCameraTouch(_ sender: UIButton) {
@@ -64,6 +65,10 @@ class SignUpImageView: UIView {
         
         return iv
     }()
+    
+    func removeGrad() {
+        grad.removeFromSuperlayer()
+    }
     
     private func commonInit() {
         let bundle = Bundle(for: type(of: self))

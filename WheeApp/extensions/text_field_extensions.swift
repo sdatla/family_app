@@ -100,13 +100,17 @@ let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
     
-    func loadImageUsingCacheWithUrlString(_ urlString: String) {
+    func loadImageUsingCacheWithUrlString(_ urlString: String, onImageLoaded: ((UIImage) -> ())?) {
         
         self.image = nil
         
         //check cache for image first
         if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
-            self.image = cachedImage
+            if let callback = onImageLoaded {
+                callback(cachedImage)
+            } else {
+                self.image = cachedImage
+            }
             return
         }
         
@@ -125,7 +129,12 @@ extension UIImageView {
                 if let downloadedImage = UIImage(data: data!) {
                     imageCache.setObject(downloadedImage, forKey: urlString as NSString)
                     
-                    self.image = downloadedImage
+                    if let callback = onImageLoaded {
+                        callback(downloadedImage)
+                    } else {
+                        self.image = downloadedImage
+                    }
+                    
                 }
             })
             
