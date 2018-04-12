@@ -3,9 +3,11 @@ import MessageUI
 import CoreData
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class Profile {
     var avatar: Data?
+    var avatarUrl: String?
     var name: String?
     var email: String?
     var phone: String?
@@ -61,6 +63,19 @@ class Profile {
     func updateProfile(_ callback: (() -> Void)?) {
         guard let guid = self.guid else {return}
         let profile = Firestore.firestore().collection("profiles").document(guid)
+        if let avatar = self.avatar {
+            let storageRef = Storage.storage().reference()
+            let profileImageRef = storageRef.child("images/\(guid)_profile_image")
+            profileImageRef.putData(avatar, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    print("something wrong with profile image upload\(error!)")
+                    return
+                }
+                if let url = metadata.downloadURL()?.absoluteString {
+                    profile.updateData(["profile_image_url": url])
+                }
+            }
+        }
         
         let data = [
             "name": self.name ?? "",
@@ -70,6 +85,7 @@ class Profile {
             "family_id": self.familyId ?? "",
             "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
         ]
+        
         profile.updateData(data) {err in
             if let err = err {
                 print("error updating the document \(err)")
@@ -202,7 +218,6 @@ class SignUpProfileViewController: UIViewController,
     @IBOutlet weak var role: UITextField!
     @IBOutlet weak var phone: InputIconView!
     @IBOutlet weak var email: InputIconView!
-    @IBOutlet weak var hobbies: InputIconView!
     @IBOutlet weak var profileTopSection: SignUpImageView! {
         didSet {
 //            profileTopSection.selectedImage.image = #imageLiteral(resourceName: "profile_placeholder")
@@ -331,12 +346,14 @@ class SignUpProfileViewController: UIViewController,
         
         imagePickerView.delegate = self
         imagePickerView.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        imagePickerView.allowsEditing = false
+        imagePickerView.allowsEditing = true
         self.present(imagePickerView, animated: true) {}
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            profileTopSection.setImage(image)
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profileTopSection.setImage(image)
         }
         self.dismiss(animated: false)

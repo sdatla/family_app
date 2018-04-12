@@ -10,6 +10,7 @@ target 'WheeApp' do
   pod 'Firebase/Invites'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'Firebase/AdMob'
 

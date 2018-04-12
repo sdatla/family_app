@@ -26,6 +26,9 @@ PODS:
   - Firebase/Messaging (4.3.0):
     - Firebase/Core
     - FirebaseMessaging (= 2.0.4)
+  - Firebase/Storage (4.3.0):
+    - Firebase/Core
+    - FirebaseStorage (= 2.0.2)
   - FirebaseAnalytics (4.0.4):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -72,6 +75,10 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FirebaseStorage (2.0.2):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - Google-Mobile-Ads-SDK (7.24.1)
   - GoogleAPIClientForREST (1.3.1):
     - GoogleAPIClientForREST/Core (= 1.3.1)
@@ -143,6 +150,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Invites
   - Firebase/Messaging
+  - Firebase/Storage
   - GoogleSignIn
 
 SPEC CHECKSUMS:
@@ -157,6 +165,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
   FirebaseInvites: 589c8e4233d7e3df0142de037f183b0be218159f
   FirebaseMessaging: 3dd86bfda2acb680b05c97f3f8ac566e9bb87b2a
+  FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
   Google-Mobile-Ads-SDK: ed8004a7265b424568dc84f3d2bbe3ea3fff958f
   GoogleAPIClientForREST: d18c6704317d6d5c56d70f724f8990eb125359a4
   GoogleSignIn: 8c599fc10d25b2af86a3f82fd9631e863f2b1400
@@ -171,6 +180,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
 
-PODFILE CHECKSUM: 3291c86d0c6de84d7cecde67330806f90bf3c66a
+PODFILE CHECKSUM: ef980c650f7411cfad528a33f6f5004e81d4f851
 
 COCOAPODS: 1.3.1

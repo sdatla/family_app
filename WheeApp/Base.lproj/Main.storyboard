@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uq6-E7-Jbu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1015.3333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="925.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xj8-Ph-ubs" customClass="SignUpImageView" customModule="WheeApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -76,7 +76,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A20-Lj-rBB" userLabel="inputs wrapper">
-                                                <rect key="frame" x="20" y="240.00000000000006" width="374" height="575.33333333333348"/>
+                                                <rect key="frame" x="20" y="239.99999999999997" width="374" height="485.33333333333326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HnH-rf-dfu" userLabel="basic Info">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="236"/>
@@ -141,7 +141,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Udn-A5-rbk" userLabel="additional info">
-                                                        <rect key="frame" x="0.0" y="315.33333333333337" width="374" height="260"/>
+                                                        <rect key="frame" x="0.0" y="315.33333333333337" width="374" height="170"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfZ-xq-zWG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
@@ -171,22 +171,6 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_emailAddress"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email address"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptQ-ai-389">
-                                                                <rect key="frame" x="0.0" y="180" width="374" height="80"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byK-7l-Tuo" customClass="InputIconView" customModule="WheeApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="80" id="y1F-ac-ep3"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="icon_interests"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Hobbies"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
@@ -267,7 +251,6 @@
                         <outlet property="birthDate" destination="rvq-wY-ywq" id="B3n-qZ-wAQ"/>
                         <outlet property="doneButtonContainer" destination="SDg-sx-BDS" id="65B-JY-Ndh"/>
                         <outlet property="email" destination="TuX-eU-uF4" id="qwL-cV-6zr"/>
-                        <outlet property="hobbies" destination="byK-7l-Tuo" id="mhq-sJ-v3g"/>
                         <outlet property="name" destination="gax-Fk-Kj7" id="fG6-qF-bQh"/>
                         <outlet property="phone" destination="fy5-fD-pt1" id="SDy-WY-UvW"/>
                         <outlet property="profileTopSection" destination="Xj8-Ph-ubs" id="7bb-o6-bFB"/>
@@ -604,7 +587,6 @@
         <image name="icon_car" width="50" height="50"/>
         <image name="icon_emailAddress" width="50" height="50"/>
         <image name="icon_homeAddress" width="50" height="50"/>
-        <image name="icon_interests" width="50" height="50"/>
         <image name="icon_phoneInfo" width="50" height="50"/>
         <image name="launch" width="828" height="1472"/>
         <image name="search" width="40" height="40"/>
