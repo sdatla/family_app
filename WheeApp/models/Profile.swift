@@ -33,10 +33,31 @@ class Profile {
         profileStatus = ProfileStatus.PENDING.rawValue
     }
     
+    init(_ data: [String: Any?]) {
+        name = data["name"] as? String ?? ""
+        email = data["email"] as? String ?? ""
+        phone = data["phone"] as? String ?? ""
+        role = data["account_type"] as? String ?? ""
+        familyId = data["family_id"] as? String ?? ""
+        avatarUrl = data["profile_image_url"] as? String ?? ""
+        profileStatus = data["profile_status"] as? String ?? ProfileStatus.PENDING.rawValue
+    }
+    
     static func getCurrenetUser(completion: @escaping ((_ result: Profile) ->Void)) {
         if Profile.isCurrentUserLoggedIn() {
             Profile.getProfile(id: Auth.auth().currentUser!.uid, complete: completion)
         }
+    }
+    
+    func getProfileAsDictionary() -> [String: Any]{
+        return [
+            "name": self.name ?? "",
+            "email": self.email ?? "",
+            "phone": self.phone ?? "",
+            "account_type": self.phone ?? "",
+            "family_id": self.familyId ?? "",
+            "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
+        ]
     }
     
     static func isCurrentUserLoggedIn() -> Bool {
@@ -46,16 +67,7 @@ class Profile {
     func createProfileInDatabase() {
         guard let guid = self.guid else {return}
         let profile = Firestore.firestore().collection("profiles").document(guid)
-        
-        let data = [
-            "name": self.name ?? "",
-            "email": self.email ?? "",
-            "phone": self.phone ?? "",
-            "account_type": self.phone ?? "",
-            "family_id": self.familyId ?? "",
-            "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
-        ]
-        profile.setData(data) {err in
+        profile.setData(getProfileAsDictionary()) {err in
             if let err = err {
                 print("error updating the document \(err)")
             } else {
@@ -88,16 +100,7 @@ class Profile {
             }
         }
         
-        let data = [
-            "name": self.name ?? "",
-            "email": self.email ?? "",
-            "phone": self.phone ?? "",
-            "account_type": self.phone ?? "",
-            "family_id": self.familyId ?? "",
-            "profile_status": self.profileStatus ?? ProfileStatus.PENDING.rawValue
-        ]
-        
-        profile.updateData(data) {err in
+        profile.updateData(getProfileAsDictionary()) {err in
             if let err = err {
                 print("error updating the document \(err)")
             } else {
@@ -118,14 +121,7 @@ class Profile {
             guard let document = document else {return}
             
             if document.exists {
-                let data = document.data()
-                let profile = Profile()
-                profile.name = data["name"] as? String ?? ""
-                profile.email = data["email"] as? String ?? ""
-                profile.phone = data["phone"] as? String ?? ""
-                profile.role = data["account_type"] as? String ?? ""
-                profile.familyId = data["family_id"] as? String ?? ""
-                profile.avatarUrl = data["profile_image_url"] as? String ?? ""
+                let profile = Profile(document.data())
                 profile.guid = id
                 complete(profile)
             }
