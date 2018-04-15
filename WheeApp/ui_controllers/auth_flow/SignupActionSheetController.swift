@@ -1,14 +1,8 @@
-//
-//  SignupActionSheetController.swift
-//  WheeApp
-//
-//  Created by Leung Wai Chan on 4/16/18.
-//  Copyright © 2018 Leung Wai Chan. All rights reserved.
-//
 
 import UIKit
-
+protocol SignupActionsheetDelegate {}
 class SignUpActionSheetController: UIAlertController {
+    var delegate: SignInViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +18,7 @@ class SignUpActionSheetController: UIAlertController {
     }
     
     private func handleEmailSignUp(action: UIAlertAction) {
-        print("email sign up")
+        delegate?.present(EmailSignUpController(), animated: true, completion: nil)
     }
     
     private func handleFacebookSignUp(action: UIAlertAction) {

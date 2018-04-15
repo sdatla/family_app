@@ -27,7 +27,6 @@ struct GettyImageResponse: Codable {
 
 
 class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, communicationControllerQrScanner {
-  
     var user: Profile?
     let googlegSigninButton:GIDSignInButton = {
         let signinButton = GIDSignInButton()
@@ -62,9 +61,14 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         label.textAlignment = .center
         label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         return label
+    }()
+    
+    lazy var background: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "launch")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
     }()
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -87,7 +91,9 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     }
     
     @objc private func joinNowLabelTapped() {
-        self.present(SignUpActionSheetController(), animated: true, completion: nil)
+        let actionsheet = SignUpActionSheetController()
+        actionsheet.delegate = self
+        self.present(actionsheet, animated: true, completion: nil)
     }
     
     
@@ -198,11 +204,11 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if  Auth.auth().currentUser?.uid != nil{
-            self.redirect()
-        } else {
+//        if  Auth.auth().currentUser?.uid != nil{
+//            self.redirect()
+//        } else {
            self.render()
-        }
+//        }
     }
     
     func render() {
@@ -212,6 +218,8 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         self.view.addSubview(scanQrCodeButton)
         self.view.addSubview(logo)
         self.view.addSubview(joinNowLabel)
+        self.view.addSubview(background)
+        self.view.sendSubview(toBack: background)
         let margin = view.layoutMarginsGuide
         googlegSigninButton.translatesAutoresizingMaskIntoConstraints = false
         googlegSigninButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -234,6 +242,11 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         joinNowLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         joinNowLabel.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -20).isActive = true
         joinNowLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(joinNowLabelTapped)))
+        
+        background.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        background.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        background.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        background.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
     }
     

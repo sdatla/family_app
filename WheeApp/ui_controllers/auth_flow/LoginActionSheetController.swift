@@ -1,10 +1,3 @@
-//
-//  LoginActionSheetController.swift
-//  WheeApp
-//
-//  Created by Leung Wai Chan on 4/16/18.
-//  Copyright © 2018 Leung Wai Chan. All rights reserved.
-//
 
 import UIKit
 

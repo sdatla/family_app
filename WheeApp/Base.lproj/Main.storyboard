@@ -593,8 +593,7 @@
         <image name="settings" width="40" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="raB-Qt-z0H"/>
-        <segue reference="kyq-Y3-p97"/>
-        <segue reference="FAK-ue-0jk"/>
+        <segue reference="qPW-tv-fFE"/>
+        <segue reference="AVj-Lo-RAb"/>
     </inferredMetricsTieBreakers>
 </document>
