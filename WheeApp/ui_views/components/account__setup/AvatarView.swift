@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class AvatarView: UIView {
 
     @IBOutlet var contentView: UIView!

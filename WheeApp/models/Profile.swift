@@ -39,11 +39,11 @@ class Profile {
         phone = data["phone"] as? String ?? ""
         role = data["account_type"] as? String ?? ""
         familyId = data["family_id"] as? String ?? ""
-        avatarUrl = data["profile_image_url"] as? String ?? ""
+        avatarUrl = data["profile_image_url"] as? String
         profileStatus = data["profile_status"] as? String ?? ProfileStatus.PENDING.rawValue
     }
     
-    static func getCurrenetUser(completion: @escaping ((_ result: Profile) ->Void)) {
+    static func getCurrenetUser(completion: @escaping ((_ result: Profile?) ->Void)) {
         if Profile.isCurrentUserLoggedIn() {
             Profile.getProfile(id: Auth.auth().currentUser!.uid, complete: completion)
         }
@@ -80,21 +80,23 @@ class Profile {
         guard let guid = self.guid else {return}
         let profile = Firestore.firestore().collection("profiles").document(guid)
         if let avatar = self.avatar {
-            let storageRef = Storage.storage().reference()
-            let profileImageRef = storageRef.child("images/\(guid)_profile_image")
-            profileImageRef.putData(avatar, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    print("something wrong with profile image upload\(error!)")
-                    return
-                }
-                if let url = metadata.downloadURL()?.absoluteString {
-                    profile.updateData(["profile_image_url": url]) {error in
-                        if error != nil {
-                            print("error with updating the profile image url \(error!)")
-                            return
+            if self.avatarUrl == nil {
+                let storageRef = Storage.storage().reference()
+                let profileImageRef = storageRef.child("images/\(guid)_profile_image")
+                profileImageRef.putData(avatar, metadata: nil) { (metadata, error) in
+                    guard let metadata = metadata else {
+                        print("something wrong with profile image upload\(error!)")
+                        return
+                    }
+                    if let url = metadata.downloadURL()?.absoluteString {
+                        profile.updateData(["profile_image_url": url]) {error in
+                            if error != nil {
+                                print("error with updating the profile image url \(error!)")
+                                return
+                            }
+                            
+                            print("added profile_image_url", url)
                         }
-                        
-                        print("added profile_image_url", url)
                     }
                 }
             }
@@ -111,7 +113,7 @@ class Profile {
         }
     }
     
-    static func getProfile(id: String, complete: @escaping (_ profile: Profile) -> Void) {
+    static func getProfile(id: String, complete: @escaping (_ profile: Profile?) -> Void) {
         let db =  Firestore.firestore()
         db.collection("profiles").document(id).getDocument(completion: {(document, err) in
             if err != nil {
@@ -124,6 +126,8 @@ class Profile {
                 let profile = Profile(document.data())
                 profile.guid = id
                 complete(profile)
+            } else {
+                complete(nil)
             }
         })
     }

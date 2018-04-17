@@ -39,24 +39,104 @@ class SignUpProfileViewController: UIViewController,
         self.dismiss(animated: true, completion: nil)
     }
     
-    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    @IBOutlet weak var name: ProfileTextField!
-    @IBOutlet weak var birthDate: UITextField!
-    @IBOutlet weak var sex: DropdownSelection!
-    @IBOutlet weak var role: UITextField!
-    @IBOutlet weak var phone: InputIconView!
-    @IBOutlet weak var email: InputIconView!
-    @IBOutlet weak var profileTopSection: SignUpImageView! {
-        didSet {
-//            profileTopSection.selectedImage.image = #imageLiteral(resourceName: "profile_placeholder")
-        }
-    }
     
-    @IBOutlet weak var doneButtonContainer: UIView!
-    @IBOutlet weak var sv: UIScrollView!
+    lazy var name: ProfileTextField = {
+        let textField = ProfileTextField()
+        textField.borderStyle = .line
+        return textField
+    }()
+    
+    @objc func donePressed() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from: picker.date)
+        birthDate.text = "\(dateString)"
+        self.view.endEditing(true)
+    }
     let picker = UIDatePicker()
-    let itemPicker = UIPickerView()
-    var sexOptions = ["-- Select --", "Male", "Female"]
+    lazy var birthDate: UITextField = {
+        // for the pickers
+      
+        let textField = UITextField()
+         textField.borderStyle = .line
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([done], animated: true)
+        textField.inputAccessoryView = toolbar
+        textField.inputView = picker
+        picker.datePickerMode = .date
+        return textField
+    }()
+    lazy var role: UITextField = {
+        let textField = UITextField()
+         textField.borderStyle = .line
+        return textField
+    }()
+    
+    let sexOptions = ["-- Select --", "Male", "Female"]
+    lazy var sex: DropdownSelection = {
+        let dropdown = DropdownSelection()
+        let itemPicker = UIPickerView()
+        itemPicker.delegate = self
+        itemPicker.dataSource = self
+        dropdown.inputView = itemPicker
+        return dropdown
+    }()
+    
+    lazy var phone: InputIconView = {
+       let iconView = InputIconView()
+        return iconView
+    }()
+    
+    lazy var email: InputIconView = {
+        let iconView = InputIconView()
+        return iconView
+    }()
+    
+    lazy var profileTopSection: SignUpImageView = {
+        let topSection = SignUpImageView()
+        topSection.onCameraTouchCallback = self.setAvatar
+        topSection.backgroundColor = UIColor.blue
+        topSection.translatesAutoresizingMaskIntoConstraints = false
+        return topSection
+    }()
+    
+    
+    lazy var nextStep: UIButton = {
+        let container = UIButton()
+        container.layer.shadowOffset = CGSize(width: 2, height: 2)
+        container.layer.shadowRadius = 5
+        container.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        container.layer.shadowOpacity = 0.7
+        container.setTitle("Next", for: .normal)
+        container.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+        container.setTitleColor(UIColor.white, for: .normal)
+        container.addTarget(self, action: #selector(onDoneClick(_:)), for: .touchUpInside)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
+    }()
+    
+    lazy var firstGroup: UIStackView = {
+        let container = UIStackView(arrangedSubviews: [name, birthDate, role])
+        container.axis = .vertical
+        container.distribution = .equalSpacing
+        container.alignment = .fill
+        container.spacing = 20
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
+    }()
+    
+    lazy var sv: UIScrollView = {
+       let scrollView =  UIScrollView()
+        scrollView.addSubview(profileTopSection)
+        scrollView.addSubview(firstGroup)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor.white
+        return scrollView
+    }()
+    
     var inviteView : Bool = false
     var profile: Profile? {
         didSet {
@@ -84,14 +164,6 @@ class SignUpProfileViewController: UIViewController,
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileTopSection.onCameraTouchCallback = self.setAvatar
-        doneButtonContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
-        doneButtonContainer.layer.shadowRadius = 5
-        doneButtonContainer.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        doneButtonContainer.layer.shadowOpacity = 0.7
-        createItemPicker()
-        createDatePicker()
         hideKeyboardWhenTappedAround()
         observeKeyboardNotifications()
         if !inviteView {
@@ -104,9 +176,33 @@ class SignUpProfileViewController: UIViewController,
         } else {
             setProfileFromInvite()
         }
+        render()
+    }
+    private func render() {
+        let margin = view.safeAreaLayoutGuide
+        view.addSubview(sv)
+        view.addSubview(nextStep)
+        sv.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        sv.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1).isActive = true
+        sv.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        sv.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        profileTopSection.topAnchor.constraint(equalTo: sv.topAnchor).isActive = true
+        profileTopSection.widthAnchor.constraint(equalTo: sv.widthAnchor, multiplier: 1).isActive = true
+        profileTopSection.centerXAnchor.constraint(equalTo: sv.centerXAnchor).isActive = true
+        profileTopSection.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        firstGroup.topAnchor.constraint(equalTo: profileTopSection.bottomAnchor, constant: 20).isActive = true
+        firstGroup.widthAnchor.constraint(equalTo: sv.widthAnchor, multiplier: 0.9).isActive = true
+        firstGroup.centerXAnchor.constraint(equalTo: sv.centerXAnchor).isActive = true
+        firstGroup.arrangedSubviews.forEach { $0.heightAnchor.constraint(equalToConstant: 40).isActive = true}
+        
+        nextStep.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        nextStep.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: 0).isActive = true
+        nextStep.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextStep.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
-    
     func save() {
         if let profile = profile {
             profile.name = name.text ?? ""
@@ -148,32 +244,7 @@ class SignUpProfileViewController: UIViewController,
         self.navigationController?.isNavigationBarHidden = false
     }
     
-    private func createDatePicker() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([done], animated: true)
-        birthDate.inputAccessoryView = toolbar
-        birthDate.inputView = picker
-        picker.datePickerMode = .date
-    }
-    
-    // for the pickers
-    @objc func donePressed() {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        let dateString = formatter.string(from: picker.date)
-        birthDate.text = "\(dateString)"
-        self.view.endEditing(true)
-    }
-    
-    private func createItemPicker() {
-        itemPicker.delegate = self
-        itemPicker.dataSource = self
-        sex.inputView = itemPicker
-    }
-    
+   
     
     
     func setAvatar(_ sender: Any) {
@@ -254,7 +325,7 @@ class SignUpProfileViewController: UIViewController,
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
-    @IBAction func onDoneClick(_ sender: Any) {
+    @objc func onDoneClick(_ sender: Any) {
         self.onDone(sender)
     }
 }

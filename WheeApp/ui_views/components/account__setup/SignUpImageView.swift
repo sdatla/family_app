@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class SignUpImageView: UIView {
     var cameraIcon: UIImageView?
     var onCameraTouchCallback: ((Any) -> ())?
@@ -30,19 +29,19 @@ class SignUpImageView: UIView {
         
         self.onCameraTouchCallback!(sender)
     }
-    @IBInspectable var image: UIImage? {
+    var image: UIImage? {
         didSet {
             selectedImage.image = image
             grad.removeFromSuperlayer()
         }
     }
     
-    @IBInspectable var firstColor: UIColor = UIColor.clear {
+    var firstColor: UIColor = UIColor.clear {
         didSet {
             updateView()
         }
     }
-    @IBInspectable var secondColor: UIColor = UIColor.clear {
+    var secondColor: UIColor = UIColor.clear {
         didSet {
             updateView()
             

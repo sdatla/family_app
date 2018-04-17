@@ -26,9 +26,10 @@ struct GettyImageResponse: Codable {
 }
 
 
-class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, communicationControllerQrScanner {
+class SignInViewController: UIViewController, communicationControllerQrScanner {
     var user: Profile?
     let googlegSigninButton:GIDSignInButton = {
+        // TODO: Change to normal ui button
         let signinButton = GIDSignInButton()
         signinButton.contentVerticalAlignment = .center
         return signinButton
@@ -70,25 +71,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        let googleUser = user
-        if (error == nil) {
-            guard let auth = user.authentication else {return}
-            let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-            Auth.auth().signIn(with: credential) {(user, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    self.afterSignIn(googleUser!, firebaseUser: user)
-//                    self.performSegue(withIdentifier: "sign_up_profile", sender: self)
-                }
-            }
-           
-        } else {
-            print("\(error.localizedDescription)")
-        }
-    }
     
     @objc private func joinNowLabelTapped() {
         let actionsheet = SignUpActionSheetController()
@@ -143,7 +125,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     
     func qrCodeValueAcquired(_ profile: Profile) {
         self.user = profile
-        print("family id", profile.familyId)
         self.performSegue(withIdentifier: "sign_up_profile", sender: nil)
     }
 
@@ -157,43 +138,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
 //            next.profile = user
         } else if let next = segue.destination as? SignUpProfileViewController {
             next.adminProfile = user
-        }
-    }
-    
-    func afterSignIn(_ user: GIDGoogleUser, firebaseUser: User?) {
-        guard let uid = firebaseUser?.uid else {return}
-        let db = Firestore.firestore()
-        let docRef = db.collection("profiles").document(uid)
-        docRef.getDocument { (document, err) in
-            if let document = document {
-                if document.exists {
-                    self.redirect()
-                } else {
-                    db.collection("families").document(uid).setData([
-                        "members": [uid],
-                        "name": "",
-                        "profile_url": ""
-                    ])
-                    db.collection("profiles").document(uid).setData([
-                        "name": user.profile.name,
-                        "profile_status": ProfileStatus.PENDING.rawValue,
-                        "account_type": "admin",
-                        "guid": uid,
-                        "email": firebaseUser?.email ?? "",
-                        "family_id": uid
-                    ]) { err in
-                        if let err = err {
-                            print("Error writing document: \(err)")
-                        } else {
-                            self.redirect()
-                            print("Document successfully written!")
-                        }
-                    }
-                }
-              
-            } else {
-                print("error in getting document", err ?? "nil")
-            }
         }
     }
     
@@ -212,8 +156,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     }
     
     func render() {
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
         self.view.addSubview(googlegSigninButton)
         self.view.addSubview(scanQrCodeButton)
         self.view.addSubview(logo)

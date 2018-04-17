@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class InputIconView: UIView {
 
     /*
@@ -43,12 +42,12 @@ class InputIconView: UIView {
         iv.layer.masksToBounds = true
         return iv
     }()
-    @IBInspectable var image: UIImage? {
+    var image: UIImage? {
         didSet {
             icon.image = image
         }
     }
-    @IBInspectable var placeholder: String? {
+    var placeholder: String? {
         didSet {
             input.placeholder = placeholder
         }

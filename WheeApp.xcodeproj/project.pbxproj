@@ -217,7 +217,6 @@
 				8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */,
 				8C0C4A1E1FAF8960005F5C32 /* Info.plist */,
 				8C0C4A341FAF8FBC005F5C32 /* WheeApp-Bridging-Header.h */,
-				8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */,
 				8CFF26721FC081420071FA84 /* SignUpFamilyProfileViewController.swift */,
 				8CB559F8202663F300741726 /* NewFeedViewController.swift */,
 				8CB559F9202663F300741726 /* NewFeedViewController.xib */,
@@ -266,6 +265,7 @@
 				8C29B7F02085397200AD537B /* LoginActionSheetController.swift */,
 				8C29B7F22085398400AD537B /* SignupActionSheetController.swift */,
 				8C29B7F420853B7E00AD537B /* EmailSignUpController.swift */,
+				8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */,
 			);
 			path = auth_flow;
 			sourceTree = "<group>";

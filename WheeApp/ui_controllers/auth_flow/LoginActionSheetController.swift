@@ -2,7 +2,9 @@
 import UIKit
 
 
-class LoginActionSheetController: UIAlertController {
+class LoginActionSheetController: UIAlertController, GIDSignInDelegate {
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -11,6 +13,7 @@ class LoginActionSheetController: UIAlertController {
         self.addAction(UIAlertAction(title: "Log in via Facebook", style: .default, handler: self.handleFacebookLogin))
         self.addAction(UIAlertAction(title: "Log in via Google", style: .default, handler: self.handleGoogleLogin))
         self.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: self.goBack))
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     private func handlePhoneNumberLogin(action: UIAlertAction) {
@@ -26,10 +29,15 @@ class LoginActionSheetController: UIAlertController {
     }
     
     private func handleGoogleLogin(action: UIAlertAction) {
-        print("google Log in")
+        GIDSignIn.sharedInstance().signIn()
+        
     }
     
     private func goBack(action: UIAlertAction) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+       print("signed")
     }
 }
