@@ -30,8 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-//        window?.rootViewController = SignInViewController()
-        window?.rootViewController = SignUpProfileViewController()
+        window?.rootViewController = SignInViewController()
+//        window?.rootViewController = SignUpProfileViewController()
 //        GIDSignIn.sharedInstance().clientID = "931076289162-4v0g57evu80kevt43bb60673qrdob0dc.apps.googleusercontent.com"
        // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         

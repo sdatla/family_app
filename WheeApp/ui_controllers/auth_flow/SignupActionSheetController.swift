@@ -4,7 +4,7 @@ import Firebase
 import FirebaseDatabase
 
 protocol SignupActionsheetDelegate {}
-class SignUpActionSheetController: UIAlertController, GIDSignInDelegate {
+class SignUpActionSheetController: UIAlertController, GIDSignInDelegate, GIDSignInUIDelegate {
     var delegate: SignInViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,7 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate {
         self.addAction(UIAlertAction(title: "Sign up via Google", style: .default, handler: self.handleGoogleSignUp))
         self.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: self.goBack))
          GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     private func handlePhoneNumberSignUp(action: UIAlertAction) {
@@ -37,8 +38,8 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // google sign in
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        let googleUser = user
         if (error == nil) {
             guard let auth = user.authentication else {return}
             let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
@@ -48,15 +49,18 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate {
                 } else {
                         guard let user = user else {return}
                         Profile.getProfile(id: user.uid, complete: { profile in
-                            if let profile = profile {
+                            if let existingProfile = profile {
                                 // redirect home page or profile sign up page
+                                if existingProfile.profileStatus == ProfileStatus.PENDING.rawValue {
+                                    self.goToProfileSignUpPage(existingProfile)
+                                } else {
+                                    print("user shoudl go to home page")
+                                }
                             } else {
                                 let newProfile = Profile(user)
                                 newProfile.familyId = user.uid
                                 let newFamily = Family([newProfile], "", newProfile.familyId!)
-                                newProfile.updateProfile({
-                                    // redirct
-                                })
+                                newProfile.updateProfile() {[weak self] in self?.goToProfileSignUpPage(newProfile)}
                                 newFamily.update()
                             }
                         })
@@ -66,5 +70,17 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate {
         } else {
             print("\(error.localizedDescription)")
         }
+    }
+    
+    private func goToProfileSignUpPage(_ profile: Profile) {
+        let profieSignupPage = SignUpProfileViewController()
+        profieSignupPage.profile = profile
+        delegate?.present(profieSignupPage, animated: true, completion: nil)
+    }
+    
+    private func goToHomePage(_ profile: Profile) {
+        let homePage = NewFeedViewController()
+        homePage.profile = profile
+        delegate?.present(homePage, animated: true, completion: nil)
     }
 }
