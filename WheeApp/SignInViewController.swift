@@ -28,15 +28,32 @@ struct GettyImageResponse: Codable {
 
 class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate, communicationControllerQrScanner {
     var user: Profile?
-    let googlegSigninButton:GIDSignInButton = {
-        let signinButton = GIDSignInButton()
-        signinButton.contentVerticalAlignment = .center
-        return signinButton
-    }()
+    
+    
+//    let googlegSigninButton:GIDSignInButton = {
+//        let signinButton = GIDSignInButton()
+//        signinButton.contentVerticalAlignment = .center
+//        return signinButton
+//    }()
     private let logo: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "whee_on_dark"))
         return iv
     }()
+    
+    let logInButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.backgroundColor = UIColor.white
+        button.setTitle("Log in", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.contentHorizontalAlignment = .left
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 10)
+        button.addTarget(self, action: #selector(onLogInClick), for: .touchUpInside)
+        return button
+    }()
+    
     let scanQrCodeButton: UIButton = {
         let button = UIButton()
         let qrCodeImage = UIImage(named: "icon_barcode")
@@ -202,6 +219,11 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
         present(ScannerViewController(), animated: true, completion: nil)
     }
     
+    @objc private func onLogInClick() {
+        
+        present(LoginActionSheetController(), animated: true, completion: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        if  Auth.auth().currentUser?.uid != nil{
@@ -214,27 +236,27 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
     func render() {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
-        self.view.addSubview(googlegSigninButton)
+        self.view.addSubview(logInButton)
         self.view.addSubview(scanQrCodeButton)
         self.view.addSubview(logo)
         self.view.addSubview(joinNowLabel)
         self.view.addSubview(background)
         self.view.sendSubview(toBack: background)
         let margin = view.layoutMarginsGuide
-        googlegSigninButton.translatesAutoresizingMaskIntoConstraints = false
-        googlegSigninButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        googlegSigninButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        googlegSigninButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+        logInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        logInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        logInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         logo.translatesAutoresizingMaskIntoConstraints = false
         logo.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         logo.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         logo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8, constant: 0).isActive = true
         logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: 0).isActive = true
         scanQrCodeButton.translatesAutoresizingMaskIntoConstraints = false
-        scanQrCodeButton.topAnchor.constraint(equalTo: googlegSigninButton.bottomAnchor, constant: 40).isActive = true
+        scanQrCodeButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40).isActive = true
         scanQrCodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scanQrCodeButton.heightAnchor.constraint(equalTo: googlegSigninButton.heightAnchor, multiplier: 1).isActive = true
-        scanQrCodeButton.widthAnchor.constraint(equalTo: googlegSigninButton.widthAnchor, multiplier: 1).isActive = true
+        scanQrCodeButton.heightAnchor.constraint(equalTo: logInButton.heightAnchor, multiplier: 1).isActive = true
+        scanQrCodeButton.widthAnchor.constraint(equalTo: logInButton.widthAnchor, multiplier: 1).isActive = true
         
         joinNowLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         joinNowLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true

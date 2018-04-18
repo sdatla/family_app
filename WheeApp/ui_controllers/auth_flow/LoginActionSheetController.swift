@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-
-class LoginActionSheetController: UIAlertController {
+class LoginActionSheetController: UIAlertController, GIDSignInUIDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addAction(UIAlertAction(title: "Log in via phone", style: .default, handler: self.handlePhoneNumberLogin))
-        self.addAction(UIAlertAction(title: "Log in via Email", style: .default, handler: self.handleEmailLogin))
-        self.addAction(UIAlertAction(title: "Log in via Facebook", style: .default, handler: self.handleFacebookLogin))
-        self.addAction(UIAlertAction(title: "Log in via Google", style: .default, handler: self.handleGoogleLogin))
+        
+//        self.addAction(UIAlertAction(title: "Log in via phone", style: .default, handler: self.handlePhoneNumberLogin))
+        self.addAction(UIAlertAction(title: "Email and Password", style: .default, handler: self.handleEmailLogin))
+        self.addAction(UIAlertAction(title: "Log in with Facebook", style: .default, handler: self.handleFacebookLogin))
+        self.addAction(UIAlertAction(title: "Log in with Google", style: .default, handler: self.handleGoogleLogin))
         self.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: self.goBack))
     }
     
@@ -33,7 +35,7 @@ class LoginActionSheetController: UIAlertController {
     }
     
     private func handleGoogleLogin(action: UIAlertAction) {
-        print("google Log in")
+        GIDSignIn.sharedInstance().signIn()
     }
     
     private func goBack(action: UIAlertAction) {
