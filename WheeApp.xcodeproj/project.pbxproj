@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		026EB93C20892BAC009DCE84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 026EB93B20892BAC009DCE84 /* GoogleService-Info.plist */; };
+		026EB945208A6922009DCE84 /* EmailSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026EB944208A6922009DCE84 /* EmailSignInController.swift */; };
 		50713DFA20D41C2D240B7556 /* Pods_WheeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */; };
 		8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */; };
 		8C0C4A121FAF8960005F5C32 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A111FAF8960005F5C32 /* SignInViewController.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		026EB93B20892BAC009DCE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		026EB93D20895C76009DCE84 /* WheeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WheeApp.entitlements; sourceTree = "<group>"; };
+		026EB944208A6922009DCE84 /* EmailSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSignInController.swift; path = /Users/sdat27/Documents/family_app/WheeApp/ui_controllers/auth_flow/EmailSignInController.swift; sourceTree = "<absolute>"; };
 		2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		550A4FE78C75D3BFCF98790B /* Pods-WheeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +269,7 @@
 				8C29B7F02085397200AD537B /* LoginActionSheetController.swift */,
 				8C29B7F22085398400AD537B /* SignupActionSheetController.swift */,
 				8C29B7F420853B7E00AD537B /* EmailSignUpController.swift */,
+				026EB944208A6922009DCE84 /* EmailSignInController.swift */,
 				8CED0B7E1FB2CBF600A65375 /* SignUpProfileViewController.swift */,
 			);
 			path = auth_flow;
@@ -547,6 +550,7 @@
 				8C2917D520267B9400E62BE5 /* credential.swift in Sources */,
 				8C2917DA20268F9B00E62BE5 /* constants.swift in Sources */,
 				8C29B7F520853B7E00AD537B /* EmailSignUpController.swift in Sources */,
+				026EB945208A6922009DCE84 /* EmailSignInController.swift in Sources */,
 				8C9A337120438E5800726462 /* DropdownSelection.swift in Sources */,
 				8CD918C81FBD65E6003C5D9E /* text_field_extensions.swift in Sources */,
 				8CD918CA1FBD6B62003C5D9E /* profileInput.swift in Sources */,

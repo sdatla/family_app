@@ -20,6 +20,8 @@ class LoginActionSheetController: UIAlertController, GIDSignInDelegate, GIDSignI
     
     private func handleEmailLogin(action: UIAlertAction) {
         print("email Log in")
+        delegate?.present(EmailSignInController(), animated: true, completion: nil)
+        
     }
     
     private func handleFacebookLogin(action: UIAlertAction) {
@@ -68,6 +70,7 @@ class LoginActionSheetController: UIAlertController, GIDSignInDelegate, GIDSignI
         }
     
     private func handleGoogleLogin(action: UIAlertAction) {
+        GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
     }
     

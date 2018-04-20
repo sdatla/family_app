@@ -149,8 +149,9 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
     }
     
     @objc private func onLoginClick() {
-        
-        present(LoginActionSheetController(), animated: true, completion: nil)
+        let actionsheet = LoginActionSheetController()
+        actionsheet.delegate = self
+        self.present(actionsheet, animated: true, completion: nil)        
     }
     
     override func viewDidAppear(_ animated: Bool) {
