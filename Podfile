@@ -13,9 +13,9 @@ target 'WheeApp' do
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'Firebase/AdMob'
-pod 'FBSDKCoreKit'
-pod 'FBSDKShareKit'
-pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
 
   # Pods for WheeApp
 

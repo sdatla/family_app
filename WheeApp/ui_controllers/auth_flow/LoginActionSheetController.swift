@@ -2,8 +2,10 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Firebase
 
-class LoginActionSheetController: UIAlertController, GIDSignInDelegate {
+class LoginActionSheetController: UIAlertController, GIDSignInDelegate, GIDSignInUIDelegate {
+    var delegate: SignInViewController?
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +15,7 @@ class LoginActionSheetController: UIAlertController, GIDSignInDelegate {
         self.addAction(UIAlertAction(title: "Log in with Google", style: .default, handler: self.handleGoogleLogin))
         self.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: self.goBack))
         GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     private func handleEmailLogin(action: UIAlertAction) {
@@ -40,7 +43,21 @@ class LoginActionSheetController: UIAlertController, GIDSignInDelegate {
         }
         
         func getFBUserData(){
-            if((FBSDKAccessToken.current()) != nil){
+            let accessToken = FBSDKAccessToken.current()
+            
+            if((accessToken) != nil){
+                
+                let credentials = FacebookAuthProvider.credential(withAccessToken: accessToken!.tokenString)
+                
+                Auth.auth().signIn(with: credentials, completion: {(user, error) in
+                    if error != nil {
+                       print("someting when wrong with facebook auth", error ?? "")
+                       return
+                    }
+                    
+                       print("Successfully logged into facebook", user ?? "")
+                    })
+                
                 FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
                         //everything works print the user data
@@ -49,18 +66,48 @@ class LoginActionSheetController: UIAlertController, GIDSignInDelegate {
                 })
             }
         }
-        
     
     private func handleGoogleLogin(action: UIAlertAction) {
         GIDSignIn.sharedInstance().signIn()
-        
     }
     
     private func goBack(action: UIAlertAction) {
         self.dismiss(animated: true, completion: nil)
     }
     
+     //google sign in
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-       print("signed")
+        if (error == nil) {
+            guard let auth = user.authentication else {return}
+            let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+            Auth.auth().signIn(with: credential) {(user, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Success")
+                    print("Successfully logged into google", user ?? "")
+ //                   guard let user = user else {return}
+//                    Profile.getProfile(id: user.uid, complete: { profile in
+//                        if let existingProfile = profile {
+//                            // redirect home page or profile sign up page
+//                            if existingProfile.profileStatus == ProfileStatus.PENDING.rawValue {
+//                                self.goToProfileSignUpPage(existingProfile)
+//                            } else {
+//                                print("user shoudl go to home page")
+//                            }
+//                        } else {
+//                            let newProfile = Profile(user)
+//                            newProfile.familyId = user.uid
+//                            let newFamily = Family([newProfile], "", newProfile.familyId!)
+//                            newProfile.updateProfile() {[weak self] in self?.goToProfileSignUpPage(newProfile)}
+//                            newFamily.update()
+//                        }
+//                    })
+                }
+            }
+
+        } else {
+            print("\(error.localizedDescription)")
+        }
     }
 }
