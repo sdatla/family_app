@@ -25,32 +25,33 @@ struct GettyImageResponse: Codable {
     let images: [GettyImage]
 }
 
-
 class SignInViewController: UIViewController, communicationControllerQrScanner {
     var user: Profile?
-    let googlegSigninButton:GIDSignInButton = {
-        // TODO: Change to normal ui button
-        let signinButton = GIDSignInButton()
-        signinButton.contentVerticalAlignment = .center
-        return signinButton
-    }()
+    
     private let logo: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "whee_on_dark"))
         return iv
     }()
+    
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: CGFloat(239/255.0), green: CGFloat(143/255.0), blue: CGFloat(78/255.0), alpha: CGFloat(1.0))
+        button.setTitle("Log in", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(onLoginClick), for: .touchUpInside)
+        return button
+    }()
+    
     let scanQrCodeButton: UIButton = {
         let button = UIButton()
-        let qrCodeImage = UIImage(named: "icon_barcode")
-        button.layer.cornerRadius = 5
-        button.backgroundColor = UIColor.white
-        button.setImage(qrCodeImage, for: .normal)
+        button.backgroundColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(204/255.0), blue: CGFloat(77/255.0), alpha: CGFloat(1.0))
         button.imageView?.contentMode = .scaleAspectFill
-        button.setTitle("Scan my family QR code", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        button.contentHorizontalAlignment = .left
-        button.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
-        button.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 10)
+        button.setTitle("Scan QR code", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.contentHorizontalAlignment = .center
         button.addTarget(self, action: #selector(onQrScanClick), for: .touchUpInside)
         return button
     }()
@@ -74,6 +75,12 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
     
     @objc private func joinNowLabelTapped() {
         let actionsheet = SignUpActionSheetController()
+        actionsheet.delegate = self
+        self.present(actionsheet, animated: true, completion: nil)
+    }
+    
+    @objc private func onLoginClick() {
+        let actionsheet = LoginActionSheetController()
         actionsheet.delegate = self
         self.present(actionsheet, animated: true, completion: nil)
     }
@@ -117,9 +124,9 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
                         print ("Error signing out: %@", signOutError)
                     }
                 }
-              
+                
             })
-           
+            
         }
     }
     
@@ -127,7 +134,7 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
         self.user = profile
         self.performSegue(withIdentifier: "sign_up_profile", sender: nil)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let next = segue.destination as? customUITabBarViewController {
             next.viewControllers?.forEach({ controller in
@@ -135,55 +142,61 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
                     newFeed.profile = self.user
                 }
             })
-//            next.profile = user
+            //            next.profile = user
         } else if let next = segue.destination as? SignUpProfileViewController {
             next.adminProfile = user
         }
     }
     
     @objc private func onQrScanClick() {
-        
         present(ScannerViewController(), animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if  Auth.auth().currentUser?.uid != nil{
-//            self.redirect()
-//        } else {
-           self.render()
-//        }
+        //        if  Auth.auth().currentUser?.uid != nil{
+        //            self.redirect()
+        //        } else {
+        self.render()
+        //        }
     }
     
     func render() {
-        self.view.addSubview(googlegSigninButton)
-        self.view.addSubview(scanQrCodeButton)
+        
         self.view.addSubview(logo)
         self.view.addSubview(joinNowLabel)
+        self.view.addSubview(scanQrCodeButton)
+        self.view.addSubview(loginButton)
         self.view.addSubview(background)
         self.view.sendSubview(toBack: background)
         let margin = view.layoutMarginsGuide
-        googlegSigninButton.translatesAutoresizingMaskIntoConstraints = false
-        googlegSigninButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
-        googlegSigninButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        googlegSigninButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
+        
         logo.translatesAutoresizingMaskIntoConstraints = false
         logo.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         logo.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         logo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8, constant: 0).isActive = true
         logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: 0).isActive = true
-        scanQrCodeButton.translatesAutoresizingMaskIntoConstraints = false
-        scanQrCodeButton.topAnchor.constraint(equalTo: googlegSigninButton.bottomAnchor, constant: 40).isActive = true
-        scanQrCodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scanQrCodeButton.heightAnchor.constraint(equalTo: googlegSigninButton.heightAnchor, multiplier: 1).isActive = true
-        scanQrCodeButton.widthAnchor.constraint(equalTo: googlegSigninButton.widthAnchor, multiplier: 1).isActive = true
         
         joinNowLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         joinNowLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         joinNowLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         joinNowLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        joinNowLabel.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -20).isActive = true
+        joinNowLabel.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -10).isActive = true
         joinNowLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(joinNowLabelTapped)))
+        
+        scanQrCodeButton.translatesAutoresizingMaskIntoConstraints = false
+        scanQrCodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scanQrCodeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        scanQrCodeButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        scanQrCodeButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        scanQrCodeButton.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -50).isActive = true
+        
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        loginButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -100).isActive = true
         
         background.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         background.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -192,9 +205,4 @@ class SignInViewController: UIViewController, communicationControllerQrScanner {
         
     }
     
-    
-    
-
-    
 }
-
