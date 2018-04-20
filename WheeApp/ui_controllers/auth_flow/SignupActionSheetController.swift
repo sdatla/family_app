@@ -9,6 +9,8 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate, GIDSign
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.addAction(UIAlertAction(title: "Sign up via phone", style: .default, handler: self.handlePhoneNumberSignUp))
         self.addAction(UIAlertAction(title: "Sign up via Email", style: .default, handler: self.handleEmailSignUp))
         self.addAction(UIAlertAction(title: "Sign up via Facebook", style: .default, handler: self.handleFacebookSignUp))
@@ -29,6 +31,7 @@ class SignUpActionSheetController: UIAlertController, GIDSignInDelegate, GIDSign
     private func handleFacebookSignUp(action: UIAlertAction) {
         print("fb sign up")
     }
+    
     
     private func handleGoogleSignUp(action: UIAlertAction) {
         GIDSignIn.sharedInstance().signIn()

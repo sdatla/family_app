@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026EB93C20892BAC009DCE84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 026EB93B20892BAC009DCE84 /* GoogleService-Info.plist */; };
 		50713DFA20D41C2D240B7556 /* Pods_WheeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */; };
 		8C0C4A101FAF8960005F5C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A0F1FAF8960005F5C32 /* AppDelegate.swift */; };
 		8C0C4A121FAF8960005F5C32 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C4A111FAF8960005F5C32 /* SignInViewController.swift */; };
@@ -26,7 +27,6 @@
 		8C29B7F32085398400AD537B /* SignupActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C29B7F22085398400AD537B /* SignupActionSheetController.swift */; };
 		8C29B7F520853B7E00AD537B /* EmailSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C29B7F420853B7E00AD537B /* EmailSignUpController.swift */; };
 		8C5D345E20549F6C007DAC9F /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */; };
-		8C5D3461205A27A3007DAC9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */; };
 		8C5DD96F935571E083F177F0 /* Pods_WheeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */; };
 		8C75028F20792B64006F6EF4 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75028E20792B63006F6EF4 /* models.swift */; };
 		8C8F07A9200C056A007884F0 /* AvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8F07A8200C056A007884F0 /* AvatarCollectionCell.swift */; };
@@ -58,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		026EB93B20892BAC009DCE84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		026EB93D20895C76009DCE84 /* WheeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WheeApp.entitlements; sourceTree = "<group>"; };
 		2BD3C2C3C69A373C4C1D5CD2 /* Pods_WheeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		550A4FE78C75D3BFCF98790B /* Pods-WheeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5582931D1A4EDB493D2DC708 /* Pods_WheeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +86,6 @@
 		8C29B7F22085398400AD537B /* SignupActionSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupActionSheetController.swift; sourceTree = "<group>"; };
 		8C29B7F420853B7E00AD537B /* EmailSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpController.swift; sourceTree = "<group>"; };
 		8C5D345D20549F6C007DAC9F /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C75028E20792B63006F6EF4 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		8C8F07A8200C056A007884F0 /* AvatarCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionCell.swift; sourceTree = "<group>"; };
 		8C8F07AB200C495E007884F0 /* SignUpImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpImageView.xib; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 		8C0C4A0E1FAF8960005F5C32 /* WheeApp */ = {
 			isa = PBXGroup;
 			children = (
+				026EB93D20895C76009DCE84 /* WheeApp.entitlements */,
 				8C29B7EE2085391C00AD537B /* ui_controllers */,
 				8CBDB8EF20662D8400559E12 /* utilities */,
 				8C2917D820268F8900E62BE5 /* constants */,
@@ -212,7 +214,7 @@
 				8C8F07AB200C495E007884F0 /* SignUpImageView.xib */,
 				8CA372BD200A86A8006DEAC1 /* AvatarView.xib */,
 				8C0C4A131FAF8960005F5C32 /* Main.storyboard */,
-				8C5D3460205A27A3007DAC9F /* GoogleService-Info.plist */,
+				026EB93B20892BAC009DCE84 /* GoogleService-Info.plist */,
 				8C0C4A191FAF8960005F5C32 /* Assets.xcassets */,
 				8C0C4A1B1FAF8960005F5C32 /* LaunchScreen.storyboard */,
 				8C0C4A1E1FAF8960005F5C32 /* Info.plist */,
@@ -342,8 +344,6 @@
 				8C0C4A1F1FAF8960005F5C32 /* Sources */,
 				8C0C4A201FAF8960005F5C32 /* Frameworks */,
 				8C0C4A211FAF8960005F5C32 /* Resources */,
-				510BBB284D458CE2BC345C1C /* [CP] Embed Pods Frameworks */,
-				BE120FE0596F4BC8B6927F0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +368,11 @@
 					8C0C4A0B1FAF8960005F5C32 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					8C0C4A221FAF8960005F5C32 = {
 						CreatedOnToolsVersion = 9.0;
@@ -400,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF36021FAFA154000F2B79 /* GoogleSignIn.bundle in Resources */,
-				8C5D3461205A27A3007DAC9F /* GoogleService-Info.plist in Resources */,
+				026EB93C20892BAC009DCE84 /* GoogleService-Info.plist in Resources */,
 				8C0C4A1D1FAF8960005F5C32 /* LaunchScreen.storyboard in Resources */,
 				8C8F07AC200C495E007884F0 /* SignUpImageView.xib in Resources */,
 				8C0C4A1A1FAF8960005F5C32 /* Assets.xcassets in Resources */,
@@ -456,24 +461,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		510BBB284D458CE2BC345C1C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		798C29F9EEC4B7E854501E9D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,29 +474,13 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE120FE0596F4BC8B6927F0B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheeAppTests/Pods-WheeAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CBA7F8FE88D40D413A7E99DC /* [CP] Embed Pods Frameworks */ = {
@@ -519,7 +490,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WheeApp/Pods-WheeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
@@ -534,7 +509,11 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
@@ -737,7 +716,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = Y6ALXHT25F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKs/GoogleSignIn",
@@ -764,7 +744,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = EYZ3Y49Y8B;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = Y6ALXHT25F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKs/GoogleSignIn",
